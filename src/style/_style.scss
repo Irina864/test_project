@@ -1,0 +1,738 @@
+body {
+  margin: 0 auto;
+  margin-left: 21px;
+  max-width: 1440px;
+  width: 100%;
+  @include flex(row, flex-start, flex-start);
+  gap: 20px;
+  background-color: $background-main;
+  color: $text-dark;
+  overflow-x: hidden;
+  @include _screenMobile {
+    flex-direction: column;
+    padding: 0;
+    margin-left: 0px;
+  }
+}
+
+.page {
+  padding: 20px;
+  max-width: 720px;
+  width: 100%;
+  @include flex(column, flex-start, flex-start);
+  gap: 20px;
+  border-radius: 12px;
+  background-color: $background;
+  @include _screenMobile {
+    padding: 0px;
+    border-radius: 0px;
+    background-color: $background-main;
+  }
+}
+
+.banners {
+  margin: 0;
+  max-width: 360px;
+  width: 100%;
+  @include flex(column, flex-start, flex-start);
+  gap: 20px;
+}
+
+.header {
+  width: 100%;
+  @include _screenMobile {
+    padding: 0 10px;
+    @include flex(column, flex-start, flex-start);
+    gap: 20px;
+  }
+  .header__title {
+    @extend %title;
+  }
+}
+
+.main {
+  width: 100%;
+  @include flex(column, flex-start, flex-start);
+  gap: 10px;
+}
+
+.search {
+  display: none;
+  @include _screenMobile {
+    width: 100%;
+    @include flex(row, space-between, center);
+    gap: 10px;
+  }
+  .search__input-wrap {
+    width: 100%;
+    padding: 11px 10px;
+    @include flex(row, flex-start, center);
+    gap: 10px;
+    border-radius: 32px;
+    background-color: $background-elements-third;
+    .search__icon {
+      @include flex(row, center, center);
+      width: 20px;
+      height: 20px;
+      color: $color-element;
+      background: url('../img/icon-search.svg');
+    }
+    .search__input {
+      border: none;
+      background-color: transparent;
+      @include font(14px, 16.94px);
+      font-family: $font-second;
+      outline: none;
+      &::placeholder {
+        color: $text-medium;
+      }
+    }
+  }
+  .search__button {
+    min-width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: none;
+    @include flex(row, center, center);
+    background-color: $background-elements-third;
+    &:hover {
+      background-color: $color-element-hover;
+    }
+  }
+}
+
+.calendar {
+  width: 100%;
+  @include flex(row, flex-start, center);
+  gap: 20px;
+  @include _screenMobile {
+    padding: 0 10px;
+  }
+  .calendar__icon-wrap {
+    position: relative;
+    min-width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: none;
+    @include flex(row, center, center);
+    background-color: $background-elements;
+    cursor: pointer;
+    color: $color-element-second;
+    &:hover {
+      background-color: $color-element-hover;
+    }
+    &:active {
+      background-color: $color-element-click;
+    }
+    @include _screenMobile {
+      background-color: $background-elements-active;
+      color: $color-element-active;
+      &:hover {
+        background-color: $color-element-active-hover;
+      }
+      &:active {
+        background-color: $color-element-active-click;
+      }
+    }
+    .calendar__icon {
+      max-width: 17.6px;
+      width: 100%;
+      height: 100%;
+      background-image: url('../img/calendar.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      @include _screenMobile {
+        background-image: url('../img/calendar-mob.svg');
+      }
+    }
+  }
+
+  .calendar__date {
+    position: absolute;
+    bottom: -70px;
+    left: 0;
+    padding: 5px;
+    @include flex(column, flex-start, flex-start);
+    gap: 5px;
+    border-radius: 5px;
+    background-color: $background;
+    border: 1px solid $color-element-second;
+  }
+}
+
+.week {
+  width: 100%;
+  @include flex(row, flex-start, flex-start);
+  gap: 5px;
+  @include _screenMobile {
+    position: relative;
+    overflow-x: auto;
+    max-width: 330px;
+    margin: auto;
+    white-space: nowrap;
+    touch-action: pan-y;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  .week__item {
+    max-width: 84px;
+    width: 100%;
+    height: 62px;
+    padding: 15px 10px;
+    @include flex(column, center, center);
+    border-radius: 8px;
+    background-color: $background-elements;
+    cursor: pointer;
+    &:hover {
+      background-color: $color-element-active-hover;
+    }
+    &:active {
+      background-color: $color-element-active-click;
+    }
+    @include _screenMobile {
+      padding: 10px;
+      min-width: 62px;
+      height: 50px;
+      background-color: $background;
+    }
+  }
+  .week__date {
+    padding: 0;
+    @include font(16px, 16px, 700);
+    text-align: center;
+    @include _screenMobile {
+      font-size: 14px;
+    }
+  }
+  .week__day {
+    padding: 0;
+    @include font(14px, 16px);
+    color: $text-medium;
+    text-align: center;
+    @include _screenMobile {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+  .week__circle {
+    display: none;
+  }
+  .week_active {
+    position: relative;
+    background-color: $background-elements-active;
+    color: $text-active;
+    cursor: default;
+    &:hover,
+    &:active {
+      background-color: $background-elements-active;
+    }
+
+    @include _screenMobile {
+      background-color: $background-elements-active;
+    }
+  }
+  .week__item.week_active {
+    border: 1px solid $color-element-active;
+  }
+
+  .week__circle.week_active {
+    display: block;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: $color-element-active;
+    z-index: 20;
+  }
+  .week__gradient {
+    display: none;
+    @include _screenMobile {
+      position: absolute;
+      top: 0;
+      width: 32px;
+      height: 50px;
+      z-index: 5;
+    }
+  }
+  .week_end {
+    display: block;
+    right: 0;
+    background: linear-gradient(
+      to left,
+      $background-main 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+  // .week_start {
+  //   display: block;
+  //   left: 0;
+  //   background: linear-gradient(
+  //     to right,
+  //     $background-main 0%,
+  //     rgba(255, 255, 255, 0) 100%
+  //   );
+  // }
+  // &:first-child,
+  // &:last-child {
+  //   z-index: 15;
+  // }
+}
+
+.content {
+  width: 100%;
+  @include flex(column, flex-start, flex-start);
+}
+.nav {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  @include _screenMobile {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .nav__item {
+    padding: 22px 0 12px 0;
+    max-height: 50px;
+    @include flex(row, center, flex-end);
+    gap: 10px;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid $color-element-third;
+    cursor: pointer;
+    &:hover {
+      background: linear-gradient(
+        to top,
+        $color-element-active-hover 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
+    }
+    &:active {
+      background: linear-gradient(
+        to top,
+        $color-element-active-click 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
+    }
+    @include _screenMobile {
+      padding: 15px 0 10px 0;
+      gap: 5px;
+    }
+  }
+  .nav__icon {
+    display: inline-block;
+    max-width: 20px;
+    max-height: 20px;
+    color: $color-element-third;
+    font-size: 20px;
+    line-height: 20px;
+    @include _screenMobile {
+      max-width: 16px;
+      max-height: 16px;
+      font-size: 16px;
+      line-height: 16px;
+    }
+  }
+  .nav__text {
+    @include flex(row, center, center);
+    text-align: center;
+    @include font(14px, 16px, 700);
+    color: $text-medium;
+    @include _screenMobile {
+      font-size: 12px;
+    }
+  }
+  .nav_mobile {
+    display: none;
+    @include _screenMobile {
+      display: flex;
+    }
+  }
+  .nav_active {
+    background: linear-gradient(
+      to top,
+      $background-elements-active 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    color: $text-active;
+    cursor: default;
+    &:hover,
+    &:active {
+      background: linear-gradient(
+        to top,
+        $background-elements-active 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
+    }
+  }
+  .nav__item.nav_active {
+    border-bottom: 2px solid $color-element-active;
+  }
+}
+
+.odds {
+  width: 100%;
+  @include flex(column, flex-start, flex-start);
+  gap: 20px;
+  @include _screenMobile {
+    display: none;
+  }
+  .odds__title {
+    @extend %title;
+  }
+  .odds__container {
+    width: 100%;
+    margin-top: 10px;
+    padding: 20px;
+    @include flex(column, flex-start, flex-start);
+    gap: 15px;
+    .odds__content {
+      width: 100%;
+      @include flex(column, flex-start, flex-start);
+      gap: 5px;
+    }
+  }
+  .odds__buttons {
+    width: 100%;
+    @include flex(row, flex-end, center);
+    gap: 20px;
+    .odds__btn {
+      padding: 9px 10px;
+      min-width: 160px;
+      height: 42px;
+      @include flex(row, center, center);
+      border-radius: 8px;
+      background-color: $background-elements-fourth;
+      border: none;
+      @include font(14px, 16px, 700);
+      color: $text-active;
+      cursor: pointer;
+      &:hover {
+        background-color: $color-element-hover;
+      }
+      &:active {
+        background-color: $color-element-click;
+      }
+      &:disabled {
+        background-color: $background-elements-unactive;
+        color: $text-medium-second;
+        font-size: 16px;
+      }
+      &:first-child {
+        padding: 9px 10px 9px 20px;
+      }
+    }
+  }
+}
+.info {
+  width: 100%;
+  padding: 5px 0;
+  @include flex(row, space-between, center);
+  .clock {
+    min-width: 126px;
+    align-self: start;
+    @include flex(row, flex-start, flex-end);
+    gap: 5px;
+    .clock__time {
+      display: inline-block;
+      text-align: center;
+      @include font(14px, 16px, 700);
+    }
+    .clock__gmt {
+      display: inline-block;
+      text-align: center;
+      @include font(12px, 16px);
+      color: $text-medium-second;
+    }
+  }
+  .state {
+    padding: 4px 10px;
+    @include flex(row, flex-start, center);
+    gap: 2px;
+    border-radius: 32px;
+    background-color: $background-elements-second;
+    .state__icon {
+      width: 12px;
+      height: 12px;
+      background-image: url('../img/icon-live.svg');
+    }
+    .state__text {
+      text-align: center;
+      @include font(10px, 10px, 700);
+      color: $text-light;
+    }
+  }
+  .favorite {
+    min-width: 126px;
+    @include flex(row, flex-end, center);
+    cursor: pointer;
+    .favorite__icon {
+      @include flex(row, center, center);
+      width: 30px;
+      color: $color-element-second;
+    }
+    .favorite__icon.active {
+      color: $color-element-active;
+    }
+  }
+}
+
+.bet {
+  width: 100%;
+  @include flex(row, space-between, center);
+  .country {
+    @include flex(row, flex-start, center);
+    gap: 10px;
+    .country__flag {
+      max-width: 33px;
+      height: auto;
+    }
+    .country__name {
+      @include font(14px, 14px, 500);
+      color: $text-medium-second;
+    }
+  }
+  .odd {
+    @include flex(row, flex-start, center);
+    gap: 5px;
+    .odd__header {
+      padding: 7.5px 0;
+      @include flex(column, center, center);
+      gap: 10px;
+      .odd__title {
+        @include font(12px, 12px, 900);
+        color: $text-medium-second;
+      }
+    }
+    .odd__box {
+      padding: 10px 8px;
+      @include flex(column, center, center);
+      gap: 5px;
+      width: 60px;
+      height: 49px;
+      border-radius: 4px;
+      background-color: $background-elements-fourth;
+      .odd__top {
+        @include flex(row, center, center);
+        .odd__text {
+          @include font(12px, 12px, 900);
+          letter-spacing: -2%;
+          text-align: center;
+          color: $color-element-active;
+        }
+      }
+      .odd__bottom {
+        @include font(12px, 12px, 700);
+        letter-spacing: -2%;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.start {
+  padding: 20px;
+  @include flex(row, space-between, center);
+  gap: 20px;
+  border-radius: 12px;
+  background-color: $background;
+  @include _screenMobile {
+    display: none;
+  }
+  .start__content {
+    @include flex(column, flex-start, flex-start);
+    gap: 5px;
+    .start__title {
+      @extend %subtitle;
+    }
+    .start__info {
+      @include font(14px, 16.41px);
+      color: $text-medium-second;
+    }
+    .start__button {
+      margin-top: 5px;
+      padding: 6px 10px;
+      min-width: 116px;
+      height: 36px;
+      @include flex(row, center, center);
+      background-color: $color-element-active;
+      border: none;
+      border-radius: 8px;
+      @include font(14px, 16.41px, 700);
+      color: $text-light;
+      cursor: pointer;
+      &:hover {
+        background-color: $color-element-active-hover;
+      }
+      &:active {
+        background-color: $color-element-active-click;
+      }
+      &:disabled {
+        background-color: $background-elements-unactive;
+        color: $text-medium-second;
+        font-size: 16px;
+      }
+      &:first-child {
+        padding: 9px 10px 9px 20px;
+      }
+    }
+    .start__button-text {
+      display: inline-block;
+    }
+  }
+  .start__img {
+    @include flex(row, center, center);
+    min-width: 130px;
+    height: 130px;
+  }
+}
+.bonuses {
+  padding: 20px;
+  @include flex(column, flex-start, flex-start);
+  gap: 20px;
+  border-radius: 12px;
+  background-color: $background;
+  @include _screenMobile {
+    display: none;
+  }
+  .bonuses__title {
+    @extend %subtitle;
+  }
+  .bonuses__content {
+    @include flex(column, flex-start, flex-start);
+    gap: 5px;
+  }
+}
+
+.bookmaker {
+  padding: 10px;
+  @include flex(row, flex-start, center);
+  gap: 10px;
+  border-radius: 8px;
+  background-color: $background-elements;
+  .bookmaker__logo {
+    width: 70px;
+    height: 36px;
+    @include flex(row, center, center);
+    border-radius: 6px;
+    padding: 8px 11px;
+  }
+
+  .bookmaker__button {
+    padding: 9px 18.5px;
+    height: 36px;
+    @include flex(row, center, center);
+    background-color: $color-element-active;
+    border: none;
+    border-radius: 8px;
+    @include font(14px, 16px, 700);
+    color: $text-light;
+    cursor: pointer;
+    &:hover {
+      background-color: $color-element-active-hover;
+    }
+    &:active {
+      background-color: $color-element-active-click;
+    }
+  }
+}
+
+.bet-status {
+  width: 100%;
+  padding: 20px;
+  @include flex(column, flex-start, flex-start);
+  gap: 20px;
+  border-radius: 12px;
+  background-color: $background;
+  @include _screenMobile {
+    display: none;
+  }
+  .bet-status__header {
+    width: 100%;
+    @include flex(row, space-between, center);
+    .bet-status__title {
+      @extend %subtitle;
+    }
+    .bet-status__link {
+      text-align: center;
+      @include font(14px, 16.41px, 500);
+      color: $color-element-active;
+      text-decoration: none;
+      cursor: pointer;
+      &:hover {
+        color: $color-element-active-hover;
+      }
+      &:active {
+        color: $color-element-active-click;
+      }
+    }
+  }
+  .bet-status__content {
+    @include flex(row, space-between, center);
+    gap: 10px;
+  }
+  .bet-status__item {
+    @include flex(column, flex-start, center);
+    gap: 10px;
+    .bet-status__logo {
+      @include flex(column, center, center);
+      min-width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background-color: $background-elements;
+    }
+    &:nth-child(1) {
+      .bet-status__bet-wrap,
+      .bet-status__logo {
+        background-color: $background-bet-home;
+      }
+    }
+    &:nth-child(3) {
+      .bet-status__bet-wrap,
+      .bet-status__logo {
+        background-color: $background-bet-away;
+      }
+    }
+  }
+  .bet-status__info {
+    padding: 2.5px 0;
+    @include flex(column, center, center);
+    gap: 5px;
+    .bet-status__bet-wrap {
+      width: 100px;
+      height: 30px;
+      @include flex(row, center, center);
+      gap: 5px;
+      border-radius: 32px;
+      padding: 5px;
+      padding-right: 10px;
+      background-color: $background-elements;
+    }
+    .bet-status__logo-wrap {
+      @include flex(row, center, center);
+      overflow: hidden;
+      max-width: 40px;
+      height: 20px;
+      border-radius: 32px;
+      width: 100%;
+    }
+    .bet-status__img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+    .bet-status__bet {
+      width: 43px;
+      @include font(12px, 14.06px, 700);
+      text-align: center;
+    }
+    .bet-status__place {
+      @include font(10px, 11.72px, 500);
+    }
+  }
+}
