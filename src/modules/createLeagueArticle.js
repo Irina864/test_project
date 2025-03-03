@@ -1,3 +1,4 @@
+// создание группы для массива матчей
 export function createLeagueArticle({
   imgSrc,
   leagueName,

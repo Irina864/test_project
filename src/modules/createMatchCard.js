@@ -1,3 +1,4 @@
+// создание карточки матча
 export function createMatchCard({
   clockTimeText,
   clockGmtText,

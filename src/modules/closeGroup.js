@@ -1,4 +1,4 @@
-//сурытие и открытие блоков с карточками  матчей
+//скрытие и открытие блоков с карточками  матчей
 
 document.addEventListener('click', (event) => {
   if (event.target.classList.contains('league__close-img')) {
