@@ -15,81 +15,79 @@
     <title>Test project</title>
   </head>
   <body>
-    <div class="page">
-      <header class="header">
-        <h2 class="header__title">Football</h2>
-        <form name="headerSearch" class="search">
-          <div class="search__input-wrap">
-            <div class="search__icon"></div>
-            <input type="text" class="search__input" placeholder="Search" />
+    <main class="page">
+      <section class="play">
+        <div class="play__header">
+          <h2 class="play__title">Football</h2>
+          <form name="headerSearch" class="search">
+            <div class="search__input-wrap">
+              <div class="search__icon"></div>
+              <input type="text" class="search__input" placeholder="Search" />
+            </div>
+            <button name="filter" type="button" class="search__button">
+              <img class="search__filter" src="./img/filter.svg" alt="filter" />
+            </button>
+          </form>
+        </div>
+        <div class="play__content">
+          <div class="calendar">
+            <div class="calendar__icon-wrap">
+              <div class="calendar__icon"></div>
+            </div>
+            <div class="week">
+              <div class="week__gradient week__gradient_start"></div>
+              <div id="yesterday" class="week__item">
+                <p class="week__date"></p>
+                <p class="week__day">Yesterday</p>
+                <div class="week__circle"></div>
+              </div>
+              <div id="today" class="week__item week__item_active">
+                <p class="week__date week__date_active"></p>
+                <p class="week__day week__day_active">Today</p>
+                <div class="week__circle week__circle_active"></div>
+              </div>
+              <div id="tomorrow" class="week__item">
+                <p class="week__date"></p>
+                <p class="week__day">Tomorrow</p>
+                <div class="week__circle"></div>
+              </div>
+              <div class="week__item">
+                <p class="week__date"></p>
+                <p class="week__day"></p>
+                <div class="week__circle"></div>
+              </div>
+              <div class="week__item">
+                <p class="week__date"></p>
+                <p class="week__day"></p>
+                <div class="week__circle"></div>
+              </div>
+              <div class="week__item">
+                <p class="week__date"></p>
+                <p class="week__day"></p>
+                <div class="week__circle"></div>
+              </div>
+              <div class="week__item">
+                <p class="week__date"></p>
+                <p class="week__day"></p>
+                <div class="week__circle"></div>
+              </div>
+              <div class="week__gradient week__gradient_end"></div>
+            </div>
           </div>
-          <button name="filter" type="button" class="search__button">
-            <img class="search__filter" src="./img/filter.svg" alt="filter" />
-          </button>
-        </form>
-      </header>
-      <main class="main">
-        <section class="calendar">
-          <div class="calendar__icon-wrap">
-            <div class="calendar__icon"></div>
-            <form name="calendarDate" class="calendar__date none">
-              <label for="date" class="calendar__label">Choose a date</label>
-              <input class="calendar__input" type="date" id="date" />
-            </form>
-          </div>
-          <div class="week">
-            <div class="week__gradient week_start"></div>
-            <div id="yesterday" class="week__item">
-              <p class="week__date"></p>
-              <p class="week__day">Yesterday</p>
-              <div class="week__circle"></div>
-            </div>
-            <div id="today" class="week__item week_active">
-              <p class="week__date week_active"></p>
-              <p class="week__day week_active">Today</p>
-              <div class="week__circle week_active"></div>
-            </div>
-            <div id="tomorrow" class="week__item">
-              <p class="week__date"></p>
-              <p class="week__day">Tomorrow</p>
-              <div class="week__circle"></div>
-            </div>
-            <div class="week__item">
-              <p class="week__date"></p>
-              <p class="week__day"></p>
-              <div class="week__circle"></div>
-            </div>
-            <div class="week__item">
-              <p class="week__date"></p>
-              <p class="week__day"></p>
-              <div class="week__circle"></div>
-            </div>
-            <div class="week__item">
-              <p class="week__date"></p>
-              <p class="week__day"></p>
-              <div class="week__circle"></div>
-            </div>
-            <div class="week__item">
-              <p class="week__date"></p>
-              <p class="week__day"></p>
-              <div class="week__circle"></div>
-            </div>
-            <div class="week__gradient week_end"></div>
-          </div>
-        </section>
-        <section class="content">
           <nav class="nav">
-            <button class="nav__item nav_mobile" type="button">
+            <button class="nav__item nav__item_mobile" type="button">
               <span class="nav__icon material-symbols-outlined">
                 done_all
               </span>
               <span class="nav__text">All</span>
             </button>
-            <button class="nav__item nav_active" type="button">
-              <span class="nav__icon nav_active material-symbols-outlined">
+            <button class="nav__item nav__item_active" type="button">
+              <span
+                class="nav__icon nav__icon_active material-symbols-outlined"
+              >
                 sensors
               </span>
-              <span class="nav__text nav_active">Live</span>
+              <span class="nav__text nav__text_active">Live</span>
             </button>
             <button class="nav__item" type="button">
               <span class="nav__icon material-symbols-outlined"> event </span>
@@ -102,228 +100,350 @@
               <span class="nav__text">Finished</span>
             </button>
           </nav>
-        </section>
-        <section class="odds">
-          <h2 class="odds__title">Betting Odds</h2>
-          <div class="odds__container">
-            <div class="info">
-              <div class="clock">
-                <span class="clock__time">15:40 AM</span>
-                <span class="clock__gmt">GTM +2:30</span>
-              </div>
-              <div class="state">
-                <div class="state__icon"></div>
-                <span class="state__text">Live</span>
-              </div>
-              <div class="favorite">
-                <i class="favorite__icon fa-solid fa-star"></i>
-              </div>
-            </div>
-            <div class="odds__content">
-              <article class="bet">
-                <div class="country">
+          <div class="league-group">
+            <article class="league">
+              <div class="league__header">
+                <div class="league__title">
+                  <div class="league__img-wrap">
+                    <img
+                      class="league__img"
+                      src="./img/logo-league.svg"
+                      alt="league"
+                    />
+                  </div>
+                  <h3 class="league__name">Premier League</h3>
+                  <div class="country">
+                    <div class="country__flag-wrap">
+                      <img
+                        class="country__flag"
+                        src="./img/icon-flag-en.svg"
+                        alt="flag"
+                      />
+                    </div>
+                    <p class="country__name">England</p>
+                  </div>
+                  <div class="matches">
+                    <span class="matches__title">Matches:</span>
+                    <span class="matches__count">32</span>
+                  </div>
+                </div>
+                <button class="league__button">
                   <img
-                    class="country__flag"
-                    src="./img/icon-flag-jp.svg"
-                    alt="flag"
+                    src="./img/icon-arrow-group.svg"
+                    alt="close"
+                    class="league__close-img"
                   />
-                  <span class="country__name">JP</span>
-                </div>
-                <div class="odd">
-                  <div class="odd__header">
-                    <span class="odd__title">W</span>
-                    <span class="odd__title">L</span>
+                </button>
+              </div>
+              <div class="league__matches">
+                <article class="match">
+                  <div class="info">
+                    <div class="clock">
+                      <span class="clock__time">15:40 AM</span>
+                      <span class="clock__gmt">GTM +2:30</span>
+                    </div>
+                    <div class="state">
+                      <div class="state__icon"></div>
+                      <span class="state__text">Live</span>
+                    </div>
+                    <div class="favorite">
+                      <i class="favorite__icon fa-solid fa-star"></i>
+                    </div>
                   </div>
-                  <div class="odd__box">
-                    <div class="odd__top">
-                      <span class="odd__text">1.78</span>
+                  <div class="match__card">
+                    <div class="match__teams">
+                      <div class="teams-wrap">
+                        <div class="team">
+                          <div class="team__flag-wrap">
+                            <img
+                              src="./img/icon-flag-lux.svg"
+                              alt="flag"
+                              class="team__flag"
+                            />
+                          </div>
+                          <p class="team__count">665</p>
+                        </div>
+                        <div class="vs">vs</div>
+                        <div class="team">
+                          <p class="team__count">665</p>
+                          <div class="team__flag-wrap">
+                            <img
+                              src="./img/icon-flag-lux.svg"
+                              alt="flag"
+                              class="team__flag"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="match__countries">
+                        <p class="match__country">dfg</p>
+                        <p class="match__country">gfd</p>
+                      </div>
+                    </div>
+                    <ul class="match__info">
+                      <li class="match__point">
+                        <img class="match__icon" src="./img/vs.svg" alt="vs" />
+                        <span class="match__item">fdgdf</span>
+                      </li>
+                      <li class="match__point">
+                        <span class="match__icon material-symbols-outlined">
+                          calendar_today
+                        </span>
+                        <span class="match__icon match__item">fdgdf</span>
+                      </li>
+                      <li class="match__point">
+                        <span class="match__icon material-symbols-outlined">
+                          stadium
+                        </span>
+                        <span class="match__item">fdgdf</span>
+                      </li>
+                      <li class="match__point">
+                        <img
+                          class="match__icon-league"
+                          src="./img/logo-league.svg"
+                          alt="leagpoint"
+                        />
+                        <span class="match__item">fdgdf</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="pinup">
+                    <div class="pinup__box">
+                      <p class="pinup__text">Best odds from:</p>
                       <img
-                        class="odd__arrow"
-                        src="./img/icon-up-arrow.svg"
-                        alt="up"
+                        class="pinup__img"
+                        src="./img/logo-pin-up.svg"
+                        alt="pin-up"
                       />
                     </div>
-                    <span class="odd__bottom">2.32</span>
+                    <button class="pinup__button">BET NOW</button>
                   </div>
-                  <div class="odd__box">
-                    <div class="odd__top">
-                      <span class="odd__text">1.78</span>
-                      <img
-                        class="odd__arrow"
-                        src="./img/icon-up-arrow.svg"
-                        alt="up"
-                      />
-                    </div>
-                    <span class="odd__bottom">2.32</span>
-                  </div>
-                  <div class="odd__box">
-                    <div class="odd__top">
-                      <span class="odd__text">1.78</span>
-                      <img
-                        class="odd__arrow"
-                        src="./img/icon-up-arrow.svg"
-                        alt="up"
-                      />
-                    </div>
-                    <span class="odd__bottom">2.32</span>
-                  </div>
-
-                  <div class="odd__box">
-                    <div class="odd__top">
-                      <span class="odd__text">1.78</span>
-                      <img
-                        class="odd__arrow"
-                        src="./img/icon-up-arrow.svg"
-                        alt="up"
-                      />
-                    </div>
-                    <span class="odd__bottom">2.32</span>
-                  </div>
-                  <div class="odd__box">
-                    <div class="odd__top">
-                      <span class="odd__text">1.78</span>
-                      <img
-                        class="odd__arrow"
-                        src="./img/icon-up-arrow.svg"
-                        alt="up"
-                      />
-                    </div>
-                    <span class="odd__bottom">2.32</span>
-                  </div>
-
-                  <div class="odd__box">
-                    <div class="odd__top">
-                      <span class="odd__text">1.78</span>
-                      <img
-                        class="odd__arrow"
-                        src="./img/icon-up-arrow.svg"
-                        alt="up"
-                      />
-                    </div>
-                    <span class="odd__bottom">2.32</span>
-                  </div>
-                  <div class="odd__box">
-                    <div class="odd__top">
-                      <span class="odd__text">1.78</span>
-                      <img
-                        class="odd__arrow"
-                        src="./img/icon-up-arrow.svg"
-                        alt="up"
-                      />
-                    </div>
-                    <span class="odd__bottom">2.32</span>
-                  </div>
-                </div>
-              </article>
-              <article class="bet">
-                <div class="country">
-                  <img
-                    class="country__flag"
-                    src="./img/icon-flag-ua.svg"
-                    alt="flag"
-                  />
-                  <span class="country__name">UA</span>
-                </div>
-                <div class="odd">
-                  <div class="odd__header">
-                    <span class="odd__title">W</span>
-                    <span class="odd__title">L</span>
-                  </div>
-                  <div class="odd__box">
-                    <div class="odd__top">
-                      <span class="odd__text">1.78</span>
-                      <img
-                        class="odd__arrow"
-                        src="./img/icon-up-arrow.svg"
-                        alt="up"
-                      />
-                    </div>
-                    <span class="odd__bottom">2.32</span>
-                  </div>
-                  <div class="odd__box">
-                    <div class="odd__top">
-                      <span class="odd__text">1.78</span>
-                      <img
-                        class="odd__arrow"
-                        src="./img/icon-up-arrow.svg"
-                        alt="up"
-                      />
-                    </div>
-                    <span class="odd__bottom">2.32</span>
-                  </div>
-                  <div class="odd__box">
-                    <div class="odd__top">
-                      <span class="odd__text">1.78</span>
-                      <img
-                        class="odd__arrow"
-                        src="./img/icon-up-arrow.svg"
-                        alt="up"
-                      />
-                    </div>
-                    <span class="odd__bottom">2.32</span>
-                  </div>
-
-                  <div class="odd__box">
-                    <div class="odd__top">
-                      <span class="odd__text">1.78</span>
-                      <img
-                        class="odd__arrow"
-                        src="./img/icon-up-arrow.svg"
-                        alt="up"
-                      />
-                    </div>
-                    <span class="odd__bottom">2.32</span>
-                  </div>
-                  <div class="odd__box">
-                    <div class="odd__top">
-                      <span class="odd__text">1.78</span>
-                      <img
-                        class="odd__arrow"
-                        src="./img/icon-up-arrow.svg"
-                        alt="up"
-                      />
-                    </div>
-                    <span class="odd__bottom">2.32</span>
-                  </div>
-
-                  <div class="odd__box">
-                    <div class="odd__top">
-                      <span class="odd__text">1.78</span>
-                      <img
-                        class="odd__arrow"
-                        src="./img/icon-up-arrow.svg"
-                        alt="up"
-                      />
-                    </div>
-                    <span class="odd__bottom">2.32</span>
-                  </div>
-                  <div class="odd__box">
-                    <div class="odd__top">
-                      <span class="odd__text">1.78</span>
-                      <img
-                        class="odd__arrow"
-                        src="./img/icon-up-arrow.svg"
-                        alt="up"
-                      />
-                    </div>
-                    <span class="odd__bottom">2.32</span>
-                  </div>
-                </div>
-              </article>
+                </article>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="odds">
+        <h2 class="odds__title">Betting Odds</h2>
+        <div class="odds__container">
+          <div class="info">
+            <div class="clock">
+              <span class="clock__time">15:40 AM</span>
+              <span class="clock__gmt">GTM +2:30</span>
             </div>
-            <div class="odds__buttons">
-              <button type="button" class="odds__btn">
-                View Match Details
-                <img src="./img/icon-arrow-btn.svg" alt="" />
-              </button>
-              <button type="button" class="odds__btn" disabled>
-                Coming Soon
-              </button>
+            <div class="state">
+              <div class="state__icon"></div>
+              <span class="state__text">Live</span>
+            </div>
+            <div class="favorite">
+              <i class="favorite__icon fa-solid fa-star"></i>
             </div>
           </div>
-        </section>
-      </main>
-    </div>
+          <div class="odds__content">
+            <article class="bet">
+              <div class="country">
+                <img
+                  class="country__flag"
+                  src="./img/icon-flag-jp.svg"
+                  alt="flag"
+                />
+                <span class="country__name">JP</span>
+              </div>
+              <div class="odd">
+                <div class="odd__header">
+                  <span class="odd__title">W</span>
+                  <span class="odd__title">L</span>
+                </div>
+                <div class="odd__box">
+                  <div class="odd__top">
+                    <span class="odd__text">1.78</span>
+                    <img
+                      class="odd__arrow"
+                      src="./img/icon-up-arrow.svg"
+                      alt="up"
+                    />
+                  </div>
+                  <span class="odd__bottom">2.32</span>
+                </div>
+                <div class="odd__box">
+                  <div class="odd__top">
+                    <span class="odd__text">1.78</span>
+                    <img
+                      class="odd__arrow"
+                      src="./img/icon-up-arrow.svg"
+                      alt="up"
+                    />
+                  </div>
+                  <span class="odd__bottom">2.32</span>
+                </div>
+                <div class="odd__box">
+                  <div class="odd__top">
+                    <span class="odd__text">1.78</span>
+                    <img
+                      class="odd__arrow"
+                      src="./img/icon-up-arrow.svg"
+                      alt="up"
+                    />
+                  </div>
+                  <span class="odd__bottom">2.32</span>
+                </div>
+
+                <div class="odd__box">
+                  <div class="odd__top">
+                    <span class="odd__text">1.78</span>
+                    <img
+                      class="odd__arrow"
+                      src="./img/icon-up-arrow.svg"
+                      alt="up"
+                    />
+                  </div>
+                  <span class="odd__bottom">2.32</span>
+                </div>
+                <div class="odd__box">
+                  <div class="odd__top">
+                    <span class="odd__text">1.78</span>
+                    <img
+                      class="odd__arrow"
+                      src="./img/icon-up-arrow.svg"
+                      alt="up"
+                    />
+                  </div>
+                  <span class="odd__bottom">2.32</span>
+                </div>
+
+                <div class="odd__box">
+                  <div class="odd__top">
+                    <span class="odd__text">1.78</span>
+                    <img
+                      class="odd__arrow"
+                      src="./img/icon-up-arrow.svg"
+                      alt="up"
+                    />
+                  </div>
+                  <span class="odd__bottom">2.32</span>
+                </div>
+                <div class="odd__box">
+                  <div class="odd__top">
+                    <span class="odd__text">1.78</span>
+                    <img
+                      class="odd__arrow"
+                      src="./img/icon-up-arrow.svg"
+                      alt="up"
+                    />
+                  </div>
+                  <span class="odd__bottom">2.32</span>
+                </div>
+              </div>
+            </article>
+            <article class="bet">
+              <div class="country">
+                <img
+                  class="country__flag"
+                  src="./img/icon-flag-ua.svg"
+                  alt="flag"
+                />
+                <span class="country__name">UA</span>
+              </div>
+              <div class="odd">
+                <div class="odd__header">
+                  <span class="odd__title">W</span>
+                  <span class="odd__title">L</span>
+                </div>
+                <div class="odd__box">
+                  <div class="odd__top">
+                    <span class="odd__text">1.78</span>
+                    <img
+                      class="odd__arrow"
+                      src="./img/icon-up-arrow.svg"
+                      alt="up"
+                    />
+                  </div>
+                  <span class="odd__bottom">2.32</span>
+                </div>
+                <div class="odd__box">
+                  <div class="odd__top">
+                    <span class="odd__text">1.78</span>
+                    <img
+                      class="odd__arrow"
+                      src="./img/icon-up-arrow.svg"
+                      alt="up"
+                    />
+                  </div>
+                  <span class="odd__bottom">2.32</span>
+                </div>
+                <div class="odd__box">
+                  <div class="odd__top">
+                    <span class="odd__text">1.78</span>
+                    <img
+                      class="odd__arrow"
+                      src="./img/icon-up-arrow.svg"
+                      alt="up"
+                    />
+                  </div>
+                  <span class="odd__bottom">2.32</span>
+                </div>
+
+                <div class="odd__box">
+                  <div class="odd__top">
+                    <span class="odd__text">1.78</span>
+                    <img
+                      class="odd__arrow"
+                      src="./img/icon-up-arrow.svg"
+                      alt="up"
+                    />
+                  </div>
+                  <span class="odd__bottom">2.32</span>
+                </div>
+                <div class="odd__box">
+                  <div class="odd__top">
+                    <span class="odd__text">1.78</span>
+                    <img
+                      class="odd__arrow"
+                      src="./img/icon-up-arrow.svg"
+                      alt="up"
+                    />
+                  </div>
+                  <span class="odd__bottom">2.32</span>
+                </div>
+
+                <div class="odd__box">
+                  <div class="odd__top">
+                    <span class="odd__text">1.78</span>
+                    <img
+                      class="odd__arrow"
+                      src="./img/icon-up-arrow.svg"
+                      alt="up"
+                    />
+                  </div>
+                  <span class="odd__bottom">2.32</span>
+                </div>
+                <div class="odd__box">
+                  <div class="odd__top">
+                    <span class="odd__text">1.78</span>
+                    <img
+                      class="odd__arrow"
+                      src="./img/icon-up-arrow.svg"
+                      alt="up"
+                    />
+                  </div>
+                  <span class="odd__bottom">2.32</span>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="odds__buttons">
+            <button type="button" class="odds__btn">
+              View Match Details
+              <img src="./img/icon-arrow-btn.svg" alt="" />
+            </button>
+            <button type="button" class="odds__btn" disabled>
+              Coming Soon
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
     <aside class="banners">
       <article class="start">
         <div class="start__content">

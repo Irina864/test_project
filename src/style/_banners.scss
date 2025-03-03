@@ -34,8 +34,6 @@
       background-color: $color-element-active;
       border: none;
       border-radius: 8px;
-      @include font(14px, 16.41px, 700);
-      color: $text-light;
       cursor: pointer;
       &:hover {
         background-color: $color-element-active-hover;
@@ -53,7 +51,9 @@
       }
     }
     .start__button-text {
-      display: inline-block;
+      padding-top: 2.25px;
+      @include font(14px, 16.41px, 700);
+      color: $text-light;
     }
   }
   .start__img {
