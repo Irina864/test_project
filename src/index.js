@@ -1,11 +1,21 @@
 import './index.html';
 import './index.scss';
+import './modules/createLeagueArticle';
+import './modules/createMatchCard';
+import './modules/createBettingOdd';
+import './modules/getMatches';
+import './modules/getOdds';
 import './modules/helpers';
-import './modules/calendar';
+import './modules/week';
 import './modules/navigation';
 import './modules/favorite';
+import './modules/closeGroup';
 import '@fortawesome/fontawesome-free/css/all.css';
 import 'material-design-icons-iconfont/dist/material-design-icons.css';
-import { setCurrentDates } from './modules/calendar';
+import { setCurrentDates } from './modules/week';
+import { getMatches } from './modules/getMatches';
+import { getOdds } from './modules/getOdds';
 
 setCurrentDates();
+getMatches();
+getOdds();

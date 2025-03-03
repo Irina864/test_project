@@ -1,9 +1,9 @@
 import { removeClass } from './helpers';
 
 const weekItems = {
+  containers: document.querySelectorAll('.week__item'),
   dateContainers: document.querySelectorAll('.week__date'),
   dayContainers: document.querySelectorAll('.week__day'),
-  containers: document.querySelectorAll('.week__item'),
   circles: document.querySelectorAll('.week__circle'),
 };
 
@@ -31,24 +31,25 @@ export function setCurrentDates() {
   });
 }
 
-// показать форму выбора даты
-document.querySelector('.calendar__icon-wrap').addEventListener('click', () => {
-  document.querySelector('.calendar__date').classList.toggle('none');
-});
-
 // выбор даты в неделе
 weekItems.containers.forEach((weekItem, index) => {
   weekItem.addEventListener('click', () => {
-    weekItems.containers.forEach((item) => removeClass('week_active', item));
-    weekItems.dateContainers.forEach((item) =>
-      removeClass('week_active', item)
+    weekItems.containers.forEach((item) =>
+      removeClass('week__item_active', item)
     );
-    weekItems.dayContainers.forEach((item) => removeClass('week_active', item));
-    weekItems.circles.forEach((item) => removeClass('week_active', item));
+    weekItems.dateContainers.forEach((item) =>
+      removeClass('week__date_active', item)
+    );
+    weekItems.dayContainers.forEach((item) =>
+      removeClass('week__day_active', item)
+    );
+    weekItems.circles.forEach((item) =>
+      removeClass('week__circle_active', item)
+    );
 
-    weekItem.classList.add('week_active');
-    weekItems.dateContainers[index].classList.add('week_active');
-    weekItems.dayContainers[index].classList.add('week_active');
-    weekItems.circles[index].classList.add('week_active');
+    weekItem.classList.add('week__item_active');
+    weekItems.dateContainers[index].classList.add('week__date_active');
+    weekItems.dayContainers[index].classList.add('week__day_active');
+    weekItems.circles[index].classList.add('week__circle_active');
   });
 });

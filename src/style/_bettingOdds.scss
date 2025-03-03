@@ -1,0 +1,122 @@
+.odds {
+  width: 100%;
+  @include flex(column, flex-start, flex-start);
+  gap: 20px;
+  @include _screenMobile {
+    display: none;
+  }
+  .odds__title {
+    @extend %title;
+  }
+  .odds__container {
+    width: 100%;
+    margin-top: 10px;
+    padding: 20px 0;
+    @include flex(column, flex-start, flex-start);
+    gap: 15px;
+    .odds__content {
+      padding: 0 20px;
+      width: 100%;
+      @include flex(column, flex-start, flex-start);
+      gap: 5px;
+    }
+  }
+  .odds__buttons {
+    padding: 0 20px;
+    width: 100%;
+    @include flex(row, flex-end, center);
+    gap: 20px;
+    .odds__btn {
+      padding: 9px 10px;
+      min-width: 160px;
+      height: 42px;
+      @include flex(row, center, center);
+      border-radius: 8px;
+      background-color: $background-elements-fourth;
+      border: none;
+      @include font(14px, 16px, 700);
+      color: $text-active;
+      cursor: pointer;
+      &:hover {
+        background-color: $color-element-hover;
+      }
+      &:active {
+        background-color: $color-element-click;
+      }
+      &:disabled {
+        background-color: $background-elements-unactive;
+        color: $text-medium-second;
+        font-size: 16px;
+        cursor: default;
+      }
+      &:first-child {
+        padding: 9px 10px 9px 20px;
+      }
+    }
+  }
+}
+
+.bet {
+  width: 100%;
+  @include flex(row, space-between, center);
+  .country {
+    @include flex(row, flex-start, center);
+    gap: 10px;
+    .country__flag-wrap {
+      width: 33px;
+      height: 24px;
+      border-radius: 2px;
+      border-width: 1px;
+      display: flex;
+      @include flex(column, center, center);
+      overflow: hidden;
+    }
+    .country__flag {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+    .country__name {
+      @include font(14px, 14px, 500);
+      color: $text-medium-second;
+    }
+  }
+}
+
+.odd {
+  @include flex(row, flex-start, center);
+  gap: 5px;
+  .odd__header {
+    padding: 7.5px 0;
+    @include flex(column, center, center);
+    gap: 10px;
+    .odd__title {
+      @include font(12px, 12px, 900);
+      color: $text-medium-second;
+    }
+  }
+  .odd__box {
+    padding: 10px 8px;
+    @include flex(column, center, center);
+    gap: 5px;
+    width: 60px;
+    height: 49px;
+    border-radius: 4px;
+    background-color: $background-elements-fourth;
+    .odd__top {
+      @include flex(row, center, center);
+      .odd__text {
+        @include font(12px, 12px, 900);
+        letter-spacing: -2%;
+        text-align: center;
+        color: $color-element-active;
+      }
+    }
+    .odd__bottom {
+      @include font(12px, 12px, 700);
+      letter-spacing: -2%;
+      text-align: center;
+    }
+  }
+}

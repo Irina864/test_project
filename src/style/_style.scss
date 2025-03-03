@@ -30,22 +30,26 @@ body {
   }
 }
 
-.header {
-  width: 100%;
-  @include _screenMobile {
-    padding: 0 10px;
-    @include flex(column, flex-start, flex-start);
-    gap: 20px;
-  }
-  .header__title {
-    @extend %title;
-  }
-}
-
-.main {
+.play {
   width: 100%;
   @include flex(column, flex-start, flex-start);
-  gap: 10px;
+  gap: 20px;
+  .play__header {
+    width: 100%;
+    @include _screenMobile {
+      padding: 0 10px;
+      @include flex(column, flex-start, flex-start);
+      gap: 20px;
+    }
+  }
+  .play__title {
+    @extend %title;
+  }
+  .play__content {
+    width: 100%;
+    @include flex(column, flex-start, flex-start);
+    gap: 10px;
+  }
 }
 
 .search {
@@ -134,23 +138,10 @@ body {
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
-
       @include _screenMobile {
         background-image: url('../img/calendar-mob.svg');
       }
     }
-  }
-
-  .calendar__date {
-    position: absolute;
-    bottom: -70px;
-    left: 0;
-    padding: 5px;
-    @include flex(column, flex-start, flex-start);
-    gap: 5px;
-    border-radius: 5px;
-    background-color: $background;
-    border: 1px solid $color-element-second;
   }
 }
 
@@ -170,8 +161,7 @@ body {
     }
   }
   .week__item {
-    max-width: 84px;
-    width: 100%;
+    width: 84px;
     height: 62px;
     padding: 15px 10px;
     @include flex(column, center, center);
@@ -212,7 +202,9 @@ body {
   .week__circle {
     display: none;
   }
-  .week_active {
+  .week__item_active,
+  .week__date_active,
+  .week__day_active {
     position: relative;
     background-color: $background-elements-active;
     color: $text-active;
@@ -226,11 +218,11 @@ body {
       background-color: $background-elements-active;
     }
   }
-  .week__item.week_active {
+  .week__item_active {
     border: 1px solid $color-element-active;
   }
 
-  .week__circle.week_active {
+  .week__circle_active {
     display: block;
     position: absolute;
     top: 4px;
@@ -251,7 +243,7 @@ body {
       z-index: 5;
     }
   }
-  .week_end {
+  .week__gradient_end {
     display: block;
     right: 0;
     background: linear-gradient(
@@ -260,33 +252,16 @@ body {
       rgba(255, 255, 255, 0) 100%
     );
   }
-  // .week_start {
-  //   display: block;
-  //   left: 0;
-  //   background: linear-gradient(
-  //     to right,
-  //     $background-main 0%,
-  //     rgba(255, 255, 255, 0) 100%
-  //   );
-  // }
-  // &:first-child,
-  // &:last-child {
-  //   z-index: 15;
-  // }
 }
 
-.content {
-  width: 100%;
-  @include flex(column, flex-start, flex-start);
-}
 .nav {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   @include _screenMobile {
     grid-template-columns: repeat(4, 1fr);
+    max-height: 41px;
   }
-
   .nav__item {
     padding: 22px 0 12px 0;
     max-height: 50px;
@@ -338,13 +313,15 @@ body {
       font-size: 12px;
     }
   }
-  .nav_mobile {
+  .nav__item_mobile {
     display: none;
     @include _screenMobile {
       display: flex;
     }
   }
-  .nav_active {
+  .nav__item_active,
+  .nav__icon_active,
+  .nav__text_active {
     background: linear-gradient(
       to top,
       $background-elements-active 0%,
@@ -361,74 +338,27 @@ body {
       );
     }
   }
-  .nav__item.nav_active {
+  .nav__item_active {
     border-bottom: 2px solid $color-element-active;
   }
 }
 
-.odds {
-  width: 100%;
-  @include flex(column, flex-start, flex-start);
-  gap: 20px;
-  @include _screenMobile {
-    display: none;
-  }
-  .odds__title {
-    @extend %title;
-  }
-  .odds__container {
-    width: 100%;
-    margin-top: 10px;
-    padding: 20px;
-    @include flex(column, flex-start, flex-start);
-    gap: 15px;
-    .odds__content {
-      width: 100%;
-      @include flex(column, flex-start, flex-start);
-      gap: 5px;
-    }
-  }
-  .odds__buttons {
-    width: 100%;
-    @include flex(row, flex-end, center);
-    gap: 20px;
-    .odds__btn {
-      padding: 9px 10px;
-      min-width: 160px;
-      height: 42px;
-      @include flex(row, center, center);
-      border-radius: 8px;
-      background-color: $background-elements-fourth;
-      border: none;
-      @include font(14px, 16px, 700);
-      color: $text-active;
-      cursor: pointer;
-      &:hover {
-        background-color: $color-element-hover;
-      }
-      &:active {
-        background-color: $color-element-click;
-      }
-      &:disabled {
-        background-color: $background-elements-unactive;
-        color: $text-medium-second;
-        font-size: 16px;
-      }
-      &:first-child {
-        padding: 9px 10px 9px 20px;
-      }
-    }
-  }
-}
 .info {
   width: 100%;
-  padding: 5px 0;
+  padding: 5px 20px;
   @include flex(row, space-between, center);
+  @include _screenMobile {
+    padding: 2px 20px;
+  }
   .clock {
+    padding-top: 2.5px;
     min-width: 126px;
     align-self: start;
     @include flex(row, flex-start, flex-end);
     gap: 5px;
+    @include _screenMobile {
+      min-width: 116px;
+    }
     .clock__time {
       display: inline-block;
       text-align: center;
@@ -439,6 +369,9 @@ body {
       text-align: center;
       @include font(12px, 16px);
       color: $text-medium-second;
+      @include _screenMobile {
+        font-size: 10px;
+      }
     }
   }
   .state {
@@ -458,6 +391,20 @@ body {
       color: $text-light;
     }
   }
+  .upcoming.state {
+    padding: 4px 10px;
+    @include flex(row, flex-start, center);
+    gap: 2px;
+    border-radius: 32px;
+    background-color: $background-elements;
+    color: $text-medium-second;
+    .state__text {
+      text-align: center;
+      @include font(10px, 10px, 700);
+      color: $text-medium-second;
+    }
+  }
+
   .favorite {
     min-width: 126px;
     @include flex(row, flex-end, center);
@@ -466,6 +413,13 @@ body {
       @include flex(row, center, center);
       width: 30px;
       color: $color-element-second;
+      @include _screenMobile {
+        max-width: 14px;
+        max-height: 14px;
+        font-size: 14px;
+        line-height: 14px;
+        margin-right: 5.5px;
+      }
     }
     .favorite__icon.active {
       color: $color-element-active;
@@ -473,55 +427,15 @@ body {
   }
 }
 
-.bet {
-  width: 100%;
-  @include flex(row, space-between, center);
-  .country {
-    @include flex(row, flex-start, center);
-    gap: 10px;
-    .country__flag {
-      max-width: 33px;
-      height: auto;
-    }
-    .country__name {
-      @include font(14px, 14px, 500);
-      color: $text-medium-second;
-    }
+.upcoming {
+  display: none;
+  @include _screenMobile {
+    display: flex;
   }
-  .odd {
-    @include flex(row, flex-start, center);
-    gap: 5px;
-    .odd__header {
-      padding: 7.5px 0;
-      @include flex(column, center, center);
-      gap: 10px;
-      .odd__title {
-        @include font(12px, 12px, 900);
-        color: $text-medium-second;
-      }
-    }
-    .odd__box {
-      padding: 10px 8px;
-      @include flex(column, center, center);
-      gap: 5px;
-      width: 60px;
-      height: 49px;
-      border-radius: 4px;
-      background-color: $background-elements-fourth;
-      .odd__top {
-        @include flex(row, center, center);
-        .odd__text {
-          @include font(12px, 12px, 900);
-          letter-spacing: -2%;
-          text-align: center;
-          color: $color-element-active;
-        }
-      }
-      .odd__bottom {
-        @include font(12px, 12px, 700);
-        letter-spacing: -2%;
-        text-align: center;
-      }
-    }
+}
+
+.live {
+  @include _screenMobile {
+    display: none;
   }
 }
