@@ -1,12 +1,13 @@
-const leagueItems = {
-  closeButtons: document.querySelectorAll('.league__button'),
-  arrows: document.querySelectorAll('.league__close-img'),
-  matches: document.querySelectorAll('.league__matches'),
-};
+//сурытие и открытие блоков с карточками  матчей
 
-leagueItems.closeButtons.forEach((btn, index) => {
-  btn.addEventListener('click', () => {
-    leagueItems.arrows[index].classList.toggle('transform_180');
-    leagueItems.matches[index].classList.toggle('none');
-  });
+document.addEventListener('click', (event) => {
+  if (event.target.classList.contains('league__close-img')) {
+    event.target.classList.toggle('transform_180');
+    const index = Array.from(
+      document.querySelectorAll('.league__close-img')
+    ).indexOf(event.target);
+    document
+      .querySelectorAll('.league__matches')
+      [index].classList.toggle('none');
+  }
 });

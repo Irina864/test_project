@@ -15,6 +15,10 @@ module.exports = {
     port: 3000,
     open: true,
     hot: true,
+    static: {
+      directory: path.join(__dirname, 'src'),
+      publicPath: '/',
+    },
   },
   entry: path.resolve(__dirname, 'src', 'index.js'),
   output: {
@@ -102,6 +106,14 @@ module.exports = {
               },
             ],
         type: 'asset/resource',
+      },
+      {
+        test: /\.json$/,
+        type: 'asset/resource',
+        exclude: /node_modules/,
+        generator: {
+          filename: 'lang/[name][ext]',
+        },
       },
       {
         test: /\.m?js$/i,

@@ -1,0 +1,96 @@
+[
+  {
+    "league__img": "./img/logo-league.svg",
+    "league__name": "Premier League",
+    "country__flag": "./img/icon-flag-en.svg",
+    "country__name": "England",
+    "matches__count": "32",
+    "matches": [
+      {
+        "for_mobile": true,
+        "pinup": false,
+        "disabled": false,
+        "clock__time": "15:40 AM",
+        "clock__gmt": "GTM +2:30",
+        "state__icon": "../img/icon-live.svg",
+        "state__text": "Live",
+        "team__flag": ["./img/icon-flag-lux.svg", "./img/icon-flag-por.svg"],
+        "team__count": ["710", "555"],
+        "match__country": ["LUX", "POR"],
+        "match__item": [
+          "Luxembrug vs Portugal",
+          "25, November, 2023",
+          "Sombro de la Viva",
+          "West East Series / Bluebird League"
+        ],
+        "match__icon_league": "./img/logo-league.svg"
+      },
+      {
+        "for_mobile": false,
+        "pinup": false,
+        "disabled": false,
+        "clock__time": "15:40 AM",
+        "clock__gmt": "GTM +2:30",
+        "state__icon": "../img/icon-live.svg",
+        "state__text": "Live",
+        "team__flag": ["./img/icon-flag-lux.svg", "./img/icon-flag-por.svg"],
+        "team__count": ["710", "555"],
+        "match__country": ["LUX", "POR"],
+        "match__item": [
+          "Luxembrug vs Portugal",
+          "25, November, 2023",
+          "Sombro de la Viva",
+          "West East Series / Bluebird League"
+        ],
+        "match__icon_league": "./img/logo-group-2.svg"
+      },
+      {
+        "for_mobile": true,
+        "pinup": false,
+        "disabled": true,
+        "clock__time": "15:40 AM",
+        "clock__gmt": "GTM +2:30",
+        "state__icon": "../img/calendar-match.svg",
+        "state__text": "Upcoming",
+        "team__flag": ["./img/icon-flag-lux.svg", "./img/icon-flag-por.svg"],
+        "team__count": ["", ""],
+        "match__country": ["LUX", "POR"],
+        "match__item": [
+          "Luxembrug vs Portugal",
+          "25, November, 2023",
+          "Sombro de la Viva",
+          "West East Series / Bluebird League"
+        ],
+        "match__icon_league": "./img/logo-group-2.svg"
+      }
+    ]
+  },
+  {
+    "league__img": "./img/logo-league.svg",
+    "league__name": "Premier League",
+    "country__flag": "./img/icon-flag-en.svg",
+    "country__name": "England",
+    "matches__count": "32",
+    "matches": [
+      {
+        "for_mobile": true,
+        "pinup": true,
+        "disabled": false,
+        "clock__time": "15:40 AM",
+        "clock__gmt": "GTM +2:30",
+        "state__icon": "../img/icon-live.svg",
+        "state__text": "Live",
+        "team__flag": ["./img/icon-flag-lux.svg", "./img/icon-flag-por.svg"],
+        "team__count": ["710", "555"],
+        "match__country": ["LUX", "POR"],
+        "match__item": [
+          "Luxembrug vs Portugal",
+          "25, November, 2023",
+          "Sombro de la Viva",
+          "West East Series / Bluebird League"
+        ],
+        "match__icon_league": "./img/logo-league.svg"
+      }
+    ]
+  }
+]

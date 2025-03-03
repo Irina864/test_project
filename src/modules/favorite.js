@@ -1,8 +1,6 @@
-const favoriteItems = document.querySelectorAll('.favorite__icon');
-
-// выбор элемента в избранное
-favoriteItems.forEach((fav) => {
-  fav.addEventListener('click', () => {
-    fav.classList.toggle('active');
-  });
+// добавление в избранное
+document.addEventListener('click', (event) => {
+  if (event.target.classList.contains('favorite__icon')) {
+    event.target.classList.toggle('active');
+  }
 });
