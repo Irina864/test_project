@@ -16,6 +16,8 @@ https://www.figma.com/design/iLXHjg22e2TXipGN7iJ8f8/%D0%A2%D0%B5%D1%81%D1%82
 
 ## Deploy
 
+https://elegant-puffpuff-dbda2f.netlify.app/
+
 ## Команды
 
 ### Сборка проекта без оптимизации
