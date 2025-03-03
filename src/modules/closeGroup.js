@@ -1,5 +1,4 @@
-//сурытие и открытие блоков с карточками  матчей
-
+// hiding and opening blocks with match cards
 document.addEventListener('click', (event) => {
   if (event.target.classList.contains('league__close-img')) {
     event.target.classList.toggle('transform_180');

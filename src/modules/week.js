@@ -7,7 +7,7 @@ const weekItems = {
   circles: document.querySelectorAll('.week__circle'),
 };
 
-// установка дат и дней недели
+// setting dates and days of the week
 export function setCurrentDates() {
   const daysOfWeek = [
     'Sunday',
@@ -31,7 +31,7 @@ export function setCurrentDates() {
   });
 }
 
-// выбор даты в неделе
+// select the date of the week
 weekItems.containers.forEach((weekItem, index) => {
   weekItem.addEventListener('click', () => {
     weekItems.containers.forEach((item) =>

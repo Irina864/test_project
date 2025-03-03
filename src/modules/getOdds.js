@@ -1,6 +1,6 @@
 import { createBettingOdd } from './createBettingOdd';
 
-// получение и ренеринг данных о ставках
+// getting and rendering betting odds
 export function getOdds() {
   fetch('../data/oddsData.json')
     .then((response) => {

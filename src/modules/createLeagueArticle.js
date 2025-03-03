@@ -1,3 +1,4 @@
+// creating a block for matches
 export function createLeagueArticle({
   imgSrc,
   leagueName,

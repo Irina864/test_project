@@ -1,3 +1,4 @@
+// creating a block for Betting Odds
 export function createBettingOdd(bet, container) {
   const article = document.createElement('article');
   article.className = 'bet';
