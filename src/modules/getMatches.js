@@ -1,7 +1,7 @@
 import { createLeagueArticle } from './createLeagueArticle';
 import { createMatchCard } from './createMatchCard';
 
-// получение и ренедринг данных о матчах
+// getting and rendering match data
 export function getMatches() {
   fetch('../data/footballData.json')
     .then((response) => {

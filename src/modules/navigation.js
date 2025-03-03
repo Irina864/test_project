@@ -6,7 +6,7 @@ const navItems = {
   texts: document.querySelectorAll('.nav__text'),
 };
 
-// выбор элемента в навигации
+// select a navigation item
 navItems.boxes.forEach((navElem, index) => {
   navElem.addEventListener('click', () => {
     navItems.boxes.forEach((item) => removeClass('nav__item_active', item));
