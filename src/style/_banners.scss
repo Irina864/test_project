@@ -93,7 +93,9 @@
     border-radius: 6px;
     padding: 8px 11px;
   }
-
+  .bookmaker__bonus {
+    @include font(14px, 18px);
+  }
   .bookmaker__button {
     padding: 9px 18.5px;
     height: 36px;
