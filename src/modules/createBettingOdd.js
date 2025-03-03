@@ -5,16 +5,21 @@ export function createBettingOdd(bet, container) {
   const countryDiv = document.createElement('div');
   countryDiv.className = 'country';
 
+  const flagImgDiv = document.createElement('div');
+  flagImgDiv.className = 'country__flag-wrap';
+
   const flagImg = document.createElement('img');
   flagImg.className = 'country__flag';
   flagImg.src = bet.country.flag;
   flagImg.alt = 'flag';
 
+  flagImgDiv.appendChild(flagImg);
+
   const countryName = document.createElement('span');
   countryName.className = 'country__name';
   countryName.textContent = bet.country.name;
 
-  countryDiv.appendChild(flagImg);
+  countryDiv.appendChild(flagImgDiv);
   countryDiv.appendChild(countryName);
   article.appendChild(countryDiv);
 

@@ -252,19 +252,6 @@ body {
       rgba(255, 255, 255, 0) 100%
     );
   }
-  // .week__gradient_start {
-  //   display: block;
-  //   left: 0;
-  //   background: linear-gradient(
-  //     to right,
-  //     $background-main 0%,
-  //     rgba(255, 255, 255, 0) 100%
-  //   );
-  // }
-  // &:first-child,
-  // &:last-child {
-  //   z-index: 15;
-  // }
 }
 
 .nav {
@@ -273,6 +260,7 @@ body {
   grid-template-columns: repeat(3, 1fr);
   @include _screenMobile {
     grid-template-columns: repeat(4, 1fr);
+    max-height: 41px;
   }
   .nav__item {
     padding: 22px 0 12px 0;

@@ -1,3 +1,4 @@
+import { getMatches } from './getMatches';
 import { removeClass } from './helpers';
 
 const navItems = {

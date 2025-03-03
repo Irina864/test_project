@@ -62,9 +62,20 @@
   .country {
     @include flex(row, flex-start, center);
     gap: 10px;
+    .country__flag-wrap {
+      width: 33px;
+      height: 24px;
+      border-radius: 2px;
+      border-width: 1px;
+      display: flex;
+      @include flex(column, center, center);
+      overflow: hidden;
+    }
     .country__flag {
-      max-width: 33px;
+      max-width: 100%;
       height: auto;
+      display: block;
+      margin: 0 auto;
     }
     .country__name {
       @include font(14px, 14px, 500);
