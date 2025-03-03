@@ -54,7 +54,7 @@
   .country {
     height: 16px;
     @include flex(row, center, center);
-    gap: 10px;
+    gap: 5px;
     @include _screenMobile {
       height: 14px;
       gap: 5px;
