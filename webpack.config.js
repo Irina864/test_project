@@ -47,7 +47,10 @@ module.exports = {
       filename: '[name].[contenthash].css',
     }),
     new CopyWebpackPlugin({
-      patterns: [{ from: path.resolve(__dirname, 'src', 'data'), to: 'data/' }],
+      patterns: [
+        { from: path.resolve(__dirname, 'src', 'data'), to: 'data/' },
+        { from: path.resolve(__dirname, 'src', 'img'), to: 'img/' },
+      ],
     }),
   ],
   module: {
