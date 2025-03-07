@@ -93,6 +93,9 @@ body {
     background-color: $background-elements-third;
     &:hover {
       background-color: $color-element-hover;
+      @include _screenMobile {
+        background: none;
+      }
     }
   }
 }
@@ -116,6 +119,9 @@ body {
     color: $color-element-second;
     &:hover {
       background-color: $color-element-hover;
+      @include _screenMobile {
+        background: none;
+      }
     }
     &:active {
       background-color: $color-element-click;
@@ -125,6 +131,9 @@ body {
       color: $color-element-active;
       &:hover {
         background-color: $color-element-active-hover;
+        @include _screenMobile {
+          background: none;
+        }
       }
       &:active {
         background-color: $color-element-active-click;
@@ -152,10 +161,10 @@ body {
   @include _screenMobile {
     position: relative;
     overflow-x: auto;
-    max-width: 330px;
+    width: calc(390 / 330 * 100vw);
     margin: auto;
     white-space: nowrap;
-    touch-action: pan-y;
+    touch-action: pan-x;
     &::-webkit-scrollbar {
       display: none;
     }
@@ -170,6 +179,9 @@ body {
     cursor: pointer;
     &:hover {
       background-color: $color-element-active-hover;
+      @include _screenMobile {
+        background: none;
+      }
     }
     &:active {
       background-color: $color-element-active-click;
@@ -209,11 +221,15 @@ body {
     background-color: $background-elements-active;
     color: $text-active;
     cursor: default;
-    &:hover,
+    &:hover {
+      background-color: $background-elements-active;
+      @include _screenMobile {
+        background: none;
+      }
+    }
     &:active {
       background-color: $background-elements-active;
     }
-
     @include _screenMobile {
       background-color: $background-elements-active;
     }
@@ -277,6 +293,9 @@ body {
         $color-element-active-hover 0%,
         rgba(255, 255, 255, 0) 100%
       );
+      @include _screenMobile {
+        background: none;
+      }
     }
     &:active {
       background: linear-gradient(
@@ -336,6 +355,9 @@ body {
         $background-elements-active 0%,
         rgba(255, 255, 255, 0) 100%
       );
+      @include _screenMobile {
+        background: none;
+      }
     }
   }
   .nav__item_active {

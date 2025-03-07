@@ -37,6 +37,9 @@
       cursor: pointer;
       &:hover {
         background-color: $color-element-active-hover;
+        @include _screenMobile {
+          background: none;
+        }
       }
       &:active {
         background-color: $color-element-active-click;
@@ -108,6 +111,9 @@
     cursor: pointer;
     &:hover {
       background-color: $color-element-active-hover;
+      @include _screenMobile {
+        background: none;
+      }
     }
     &:active {
       background-color: $color-element-active-click;
@@ -139,6 +145,9 @@
       cursor: pointer;
       &:hover {
         color: $color-element-active-hover;
+        @include _screenMobile {
+          background: none;
+        }
       }
       &:active {
         color: $color-element-active-click;
