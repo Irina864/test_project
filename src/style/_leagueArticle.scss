@@ -309,6 +309,9 @@
     }
     &:hover {
       background-color: $color-element-hover;
+      @include _screenMobile {
+        background: none;
+      }
     }
     &:active {
       background-color: $color-element-click;
